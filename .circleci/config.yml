@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build-master:
+    executor: master-checker
+    steps:
+      - run: echo "Success"
+
+workflows:
+  version: 2
+  build-master:
+    jobs:
+      - build-master:
+          filters:
+            branches:
+              only: master
