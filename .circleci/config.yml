@@ -1,5 +1,10 @@
 version: 2.1
 
+executors:
+  master-checker:
+    docker:
+      - image: cimg/base:stable-20.04
+
 jobs:
   build-master:
     executor: master-checker
