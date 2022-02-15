@@ -1,21 +1,21 @@
 version: 2.1
 
 executors:
-  master-checker:
+  main-checker:
     docker:
       - image: cimg/base:stable-20.04
 
 jobs:
-  build-master:
-    executor: master-checker
+  build-main:
+    executor: main-checker
     steps:
       - run: echo "Success"
 
 workflows:
   version: 2
-  build-master:
+  build-main:
     jobs:
-      - build-master:
+      - build-main:
           filters:
             branches:
-              only: master
+              only: main
